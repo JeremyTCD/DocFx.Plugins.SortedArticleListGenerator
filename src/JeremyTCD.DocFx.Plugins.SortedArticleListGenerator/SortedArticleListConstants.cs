@@ -3,7 +3,7 @@
     public static class SortedArticleListConstants
     {
         public const string SalSnippetLengthKey = "jr.salSnippetLength";
-        public const string EnableSalKey = "jr.enableSal";
+        public const string InsertSalKey = "jr.insertSal";
         public const string IncludeInSalKey = "jr.includeInSal";
         public const string DateKey = "jr.date";
         public const string SalAllItemsNodeId = "sal-all-items";
