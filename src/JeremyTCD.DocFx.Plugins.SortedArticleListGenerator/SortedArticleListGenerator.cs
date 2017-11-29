@@ -17,8 +17,7 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
 
         public ImmutableDictionary<string, object> PrepareMetadata(ImmutableDictionary<string, object> metadata)
         {
-            object length = null;
-            metadata.TryGetValue(SortedArticleListConstants.SalSnippetLengthKey, out length);
+            metadata.TryGetValue(SortedArticleListConstants.SalSnippetLengthKey, out object length);
             SalSnippetLength = length as int? ?? SortedArticleListConstants.DefaultSalSnippetLength;
 
             return metadata;
@@ -60,8 +59,7 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
         {
             foreach (ManifestItem manifestItem in manifest.Files)
             {
-                object enableSal = null;
-                manifestItem.Metadata.TryGetValue(SortedArticleListConstants.EnableSalKey, out enableSal);
+                manifestItem.Metadata.TryGetValue(SortedArticleListConstants.InsertSalKey, out object enableSal);
                 if (enableSal as bool? != true)
                 {
                     continue;
@@ -80,7 +78,6 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
                 }
                 salWrapperNode.AppendChildren(salItemsNode.ChildNodes);
 
-
                 htmlDoc.Save(Path.Combine(outputFolder, relPath));
             }
         }
@@ -91,8 +88,7 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
 
             foreach (ManifestItem manifestItem in manifest.Files)
             {
-                object includeInSal = null;
-                manifestItem.Metadata.TryGetValue(SortedArticleListConstants.IncludeInSalKey, out includeInSal);
+                manifestItem.Metadata.TryGetValue(SortedArticleListConstants.IncludeInSalKey, out object includeInSal);
                 if (includeInSal as bool? != true)
                 {
                     continue;
