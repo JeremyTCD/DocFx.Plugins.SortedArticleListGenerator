@@ -23,18 +23,18 @@ A DocFx post-processor for article list generation. SortedArticleListGenerator s
 TODO
 ### Including Articles In The Sorted Article List
 Articles to be included must have the following Yaml properties:
-- *jr.date*: Value must be in the month/day/year format, e.g *12/8/2017*.
-- *jr.includeInSal*: Value must be *true*.
+- *jtcd.date*: Value must be in the month/day/year format, e.g *12/8/2017*.
+- *jtcd.includeInSal*: Value must be *true*.
 
 Optionally, an article can have a third optional property:
-- *jr.salSnippetLength*: Value must be the number of characters to include. The default snippet length is 500. 
+- *jtcd.salSnippetLength*: Value must be the number of characters to include. The default snippet length is 500. 
 <!--todo article must have article element with id _content-->
 Example article that SortedArticleListGenerator will include:
 ```YAML
 ---
-jr.date: 12/8/2017
-jr.includeInSal: true
-jr.salSnipperLength: 200
+jtcd.date: 12/8/2017
+jtcd.includeInSal: true
+jtcd.salSnippetLength: 200
 ---
 
 # Your Article Header
@@ -45,13 +45,13 @@ TODO
 
 ### Inserting The Sorted Article List
 The sorted list of articles is inserted into any html page generated from an article that meets the following requirements:
-- Must have the Yaml property *jr.insertSal* with value *true*.
+- Must have the Yaml property *jtcd.insertSal* with value *true*.
 - Generated html page must have a div element with id *sal-all-items*. 
 
 Example article that SortedArticleListGenerator will insert the sorted article list into:
 ```YAML
 ---
-jr.insertSal: true
+jtcd.insertSal: true
 ---
 
 # Your Article Header
