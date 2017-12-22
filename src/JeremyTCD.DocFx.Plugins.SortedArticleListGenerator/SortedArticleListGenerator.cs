@@ -89,7 +89,8 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
             foreach (ManifestItem manifestItem in manifest.Files)
             {
                 manifestItem.Metadata.TryGetValue(SortedArticleListConstants.IncludeInSalKey, out object includeInSal);
-                if (includeInSal as bool? != true)
+                // TODO make sure this works
+                if (includeInSal as bool? == false)
                 {
                     continue;
                 }
