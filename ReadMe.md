@@ -13,7 +13,7 @@ A [DocFx](https://dotnet.github.io/docfx/) plugin.
 [Building](#building)  
 
 ## Summary
-A DocFx post-processor for article list generation. SortedArticleListGenerator sorts articles by date, extracts snippets from each article and inserts the resulting list of snippets into one or more articles.
+A DocFx post-processor for article list generation. SortedArticleListGenerator sorts articles (currently on only by date), extracts snippets from each article and inserts the resulting list of snippets into one or more articles.
 
 ## Getting SortedArticleListGenerator
 <!--todo requires JeremyTCD.DocFx.Plugins.Utils-->
