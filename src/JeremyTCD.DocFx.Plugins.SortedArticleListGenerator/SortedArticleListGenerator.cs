@@ -59,6 +59,11 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
         {
             foreach (ManifestItem manifestItem in manifest.Files)
             {
+                if (manifestItem.DocumentType != "Conceptual")
+                {
+                    continue;
+                }
+
                 manifestItem.Metadata.TryGetValue(SortedArticleListConstants.EnableSalKey, out object enableSal);
                 if (enableSal as bool? != true)
                 {
@@ -88,6 +93,11 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
 
             foreach (ManifestItem manifestItem in manifest.Files)
             {
+                if(manifestItem.DocumentType != "Conceptual")
+                {
+                    continue;
+                }
+
                 manifestItem.Metadata.TryGetValue(SortedArticleListConstants.IncludeInSalKey, out object includeInSal);
                 // TODO make sure this works
                 if (includeInSal as bool? == false)
