@@ -59,7 +59,7 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
         {
             foreach (ManifestItem manifestItem in manifest.Files)
             {
-                manifestItem.Metadata.TryGetValue(SortedArticleListConstants.InsertSalKey, out object enableSal);
+                manifestItem.Metadata.TryGetValue(SortedArticleListConstants.EnableSalKey, out object enableSal);
                 if (enableSal as bool? != true)
                 {
                     continue;

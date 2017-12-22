@@ -2,8 +2,8 @@
 {
     public static class SortedArticleListConstants
     {
+        public const string EnableSalKey = "jtcd.enableSal";
         public const string SalSnippetLengthKey = "jtcd.salSnippetLength";
-        public const string InsertSalKey = "jtcd.insertSal";
         public const string IncludeInSalKey = "jtcd.includeInSal";
         public const string DateKey = "jtcd.date";
         public const string SalAllItemsNodeId = "sal-all-items";
