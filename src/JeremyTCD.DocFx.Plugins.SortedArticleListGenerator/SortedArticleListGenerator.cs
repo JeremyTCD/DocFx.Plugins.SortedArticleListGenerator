@@ -13,13 +13,9 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
     [Export(nameof(SortedArticleListGenerator), typeof(IPostProcessor))]
     public class SortedArticleListGenerator : IPostProcessor
     {
-        private int SalSnippetLength;
-
         public ImmutableDictionary<string, object> PrepareMetadata(ImmutableDictionary<string, object> metadata)
         {
-            metadata.TryGetValue(SortedArticleListConstants.SalSnippetLengthKey, out object length);
-            SalSnippetLength = length as int? ?? SortedArticleListConstants.DefaultSalSnippetLength;
-
+            // Do nothing
             return metadata;
         }
 
@@ -99,20 +95,22 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
                 }
 
                 manifestItem.Metadata.TryGetValue(SortedArticleListConstants.IncludeInSalKey, out object includeInSal);
-                // TODO make sure this works
                 if (includeInSal as bool? == false)
                 {
                     continue;
                 }
 
+                manifestItem.Metadata.TryGetValue(SortedArticleListConstants.SalSnippetLengthKey, out object length);
+                int salSnippetLength = length as int? ?? SortedArticleListConstants.DefaultSalSnippetLength;
+
                 HtmlNode articleNode = manifestItem.GetHtmlOutputArticleNode(outputFolder);
                 string relPath = manifestItem.GetHtmlOutputRelPath();
-                HtmlNode snippetNode = SnippetCreator.CreateSnippet(articleNode, relPath, SalSnippetLength);
+                HtmlNode snippetNode = SnippetCreator.CreateSnippet(articleNode, relPath, salSnippetLength);
 
                 DateTime date = default(DateTime);
                 try
                 {
-                    date = DateTime.ParseExact(manifestItem.Metadata[SortedArticleListConstants.DateKey] as string, "d", new CultureInfo("en-us"));
+                    date = DateTime.ParseExact(manifestItem.Metadata[SortedArticleListConstants.DateKey] as string, "d", DateTimeFormatInfo.InvariantInfo);
                 }
                 catch
                 {
