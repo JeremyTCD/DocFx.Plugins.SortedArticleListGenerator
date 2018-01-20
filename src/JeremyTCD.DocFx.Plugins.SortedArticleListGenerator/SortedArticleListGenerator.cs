@@ -89,7 +89,7 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
 
             foreach (ManifestItem manifestItem in manifest.Files)
             {
-                if(manifestItem.DocumentType != "Conceptual")
+                if (manifestItem.DocumentType != "Conceptual")
                 {
                     continue;
                 }
@@ -110,7 +110,11 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
                 DateTime date = default(DateTime);
                 try
                 {
-                    date = DateTime.ParseExact(manifestItem.Metadata[SortedArticleListConstants.DateKey] as string, "d", DateTimeFormatInfo.InvariantInfo);
+                    date = DateTime.ParseExact(manifestItem.Metadata[SortedArticleListConstants.DateKey] as string,
+                        // Info on custom date formats https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.85).aspx
+                        new string[] { "MMM d, yyyy", "d" },
+                        DateTimeFormatInfo.InvariantInfo,
+                        DateTimeStyles.AllowWhiteSpaces);
                 }
                 catch
                 {
