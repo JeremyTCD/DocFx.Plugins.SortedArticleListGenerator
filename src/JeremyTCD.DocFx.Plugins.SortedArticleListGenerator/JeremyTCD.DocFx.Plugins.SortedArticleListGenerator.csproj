@@ -1,28 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
-    <AssemblyName>JeremyTCD.DocFx.Plugins.SortedArticleListGenerator</AssemblyName>
-    <PackageId>JeremyTCD.DocFx.Plugins.SortedArticleListGenerator</PackageId>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <Authors>JeremyTCD</Authors>
-    <Copyright>Copyright © JeremyTCD 2017</Copyright>
-    <Description>A DocFx post-processor for article list generation. SortedArticleListGenerator sorts articles by date, extracts snippets from each article and inserts the resulting list of snippets into one or more articles.</Description>
-    <PackageLicenseUrl>https://github.com/JeremyTCD/DocFx.Plugins.SortedArticleListGenerator/blob/master/License.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/JeremyTCD/DocFx.Plugins.SortedArticleListGenerator</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/JeremyTCD/DocFx.Plugins.SortedArticleListGenerator</RepositoryUrl>
-    <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>DocFx Plugin Sort List Date</PackageTags>
-    <NeutralLanguage>English</NeutralLanguage>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net461</TargetFramework>
+        <AssemblyName>JeremyTCD.DocFx.Plugins.SortedArticleListGenerator</AssemblyName>
+        <PackageId>JeremyTCD.DocFx.Plugins.SortedArticleListGenerator</PackageId>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+        <Authors>JeremyTCD</Authors>
+        <Copyright>Copyright © JeremyTCD 2017</Copyright>
+        <Description>A DocFx post-processor for article list generation. SortedArticleListGenerator sorts articles by date, extracts snippets from each article and inserts the resulting list of snippets into one or more articles.</Description>
+        <PackageLicenseUrl>https://github.com/JeremyTCD/DocFx.Plugins.SortedArticleListGenerator/blob/master/License.txt</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/JeremyTCD/DocFx.Plugins.SortedArticleListGenerator</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/JeremyTCD/DocFx.Plugins.SortedArticleListGenerator</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
+        <PackageTags>DocFx Plugin Sort List Date</PackageTags>
+        <NeutralLanguage>English</NeutralLanguage>
+        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="JeremyTCD.DocFx.Plugins.Utils" Version="0.1.0" />
-    <PackageReference Include="Microsoft.DocAsCode.Build.ConceptualDocuments" Version="2.27.0" />
-    <PackageReference Include="Microsoft.DocAsCode.Common" Version="2.27.0" />
-  </ItemGroup>
-    
+    <ItemGroup>
+        <PackageReference Include="JeremyTCD.DocFx.Plugins.Utils" Version="0.2.0" />
+        <PackageReference Include="Microsoft.DocAsCode.Build.ConceptualDocuments" Version="2.27.0" />
+        <PackageReference Include="Microsoft.DocAsCode.Common" Version="2.27.0" />
+    </ItemGroup>
+
 </Project>
