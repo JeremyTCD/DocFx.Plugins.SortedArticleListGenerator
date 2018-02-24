@@ -1,12 +1,12 @@
-﻿using Microsoft.DocAsCode.Plugins;
+﻿using HtmlAgilityPack;
+using JeremyTCD.DocFx.Plugins.Utils;
+using Microsoft.DocAsCode.Plugins;
 using System;
 using System.Collections.Generic;
-using System.Composition;
 using System.Collections.Immutable;
-using System.IO;
-using HtmlAgilityPack;
+using System.Composition;
 using System.Globalization;
-using JeremyTCD.DocFx.Plugins.Utils;
+using System.IO;
 
 namespace JeremyTCD.DocFx.Plugins.SortedArticleList
 {
