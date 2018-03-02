@@ -104,7 +104,7 @@ namespace JeremyTCD.DocFx.Plugins.SortedArticleList
                 int salSnippetLength = length as int? ?? SortedArticleListConstants.DefaultSalSnippetLength;
 
                 HtmlNode articleNode = manifestItem.GetHtmlOutputArticleNode(outputFolder);
-                string relPath = manifestItem.GetHtmlOutputRelPath();
+                string relPath = manifestItem.GetHtmlOutputRelPath().Replace(".html", "");
                 HtmlNode snippetNode = SnippetCreator.CreateSnippet(articleNode, relPath, salSnippetLength);
 
                 DateTime date = default(DateTime);
